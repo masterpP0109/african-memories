@@ -8,8 +8,8 @@ import Navbar from './Navbar';
 import AccommodationFacilitiesSection from './AccommodationFacilities';
 import AccommodationMainTitlesSection from './AccommodationMainTitles';
 
-export default function AccommodationDetail({ accommodationId }: { accommodationId: number }) {
-  const accommodation = accommodationCatalog.find((item) => item.id === accommodationId);
+export default function AccommodationDetail({ slug }: { slug: string }) {
+  const accommodation = accommodationCatalog.find((item) => item.slug === slug);
 
   if (!accommodation) {
     return (

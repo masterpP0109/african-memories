@@ -1,12 +1,11 @@
 import AccommodationDetail from '../../components/AccommodationDetail';
 
 interface PageProps {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }
 
 export default async function AccommodationPage({ params }: PageProps) {
-  const { id } = await params;
-  const accommodationId = Number(id);
+  const { slug } = await params;
 
-  return <AccommodationDetail accommodationId={accommodationId} />;
+  return <AccommodationDetail slug={slug} />;
 }

@@ -17,6 +17,7 @@ const lodges = [
   {
     id: 1,
     title: "Palm River Lodge",
+    slug: "palm-river-lodge",
     price: "FROM US$1420 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "8 Tented Suites",
@@ -31,6 +32,7 @@ const lodges = [
   {
     id: 2,
     title: "Victoria Falls Safari Lodge",
+    slug: "victoria-falls-safari-lodge",
     price: "FROM US$1370 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "5 Vintage Tents",
@@ -45,6 +47,7 @@ const lodges = [
   {
     id: 3,
     title: "Ilala Lodge Hotel",
+    slug: "ilala-lodge-hotel",
     price: "FROM US$9870 PER CAMP PER NIGHT",
     location: "Victoria Falls",
     feature1: "4 Luxury Tents",
@@ -59,6 +62,7 @@ const lodges = [
   {
     id: 4,
     title: "Pamusha Lodge",
+    slug: "pamusha-lodge",
     price: "FROM US$1850 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "12 Luxury Tents",
@@ -73,6 +77,7 @@ const lodges = [
   {
     id: 5,
     title: "Victoria Falls Pioneer Camp",
+    slug: "victoria-falls-pioneer-camp",
     price: "FROM US$2100 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "15 Suite Tents",
@@ -87,6 +92,7 @@ const lodges = [
   {
     id: 6,
     title: "Troutbeck Resort",
+    slug: "troutbeck-resort",
     price: "FROM US$950 PER PERSON PER NIGHT",
     location: "Nyanga",
     feature1: "20 Rooms",
@@ -101,6 +107,7 @@ const lodges = [
   {
     id: 7,
     title: "Elephant Hills Resort",
+    slug: "elephant-hills-resort",
     price: "FROM US$890 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "18 Treehouse Suites",
@@ -115,6 +122,7 @@ const lodges = [
   {
     id: 8,
     title: "Mbano Manor Hotel",
+    slug: "mbano-manor-hotel",
     price: "FROM US$1680 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "10 Luxury Tents",
@@ -129,6 +137,7 @@ const lodges = [
   {
     id: 9,
     title: "Explorers Village",
+    slug: "explorers-village",
     price: "FROM US$1250 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "22 Suite Tents",
@@ -143,6 +152,7 @@ const lodges = [
   {
     id: 10,
     title: "Dzimbahwe Guest Lodge",
+    slug: "dzimbahwe-guest-lodge",
     price: "FROM US$2400 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "6 Exclusive Tents",
@@ -157,6 +167,7 @@ const lodges = [
   {
     id: 11,
     title: "Old drift Lodge",
+    slug: "old-drift-lodge",
     price: "FROM US$780 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "16 Luxury Rooms",
@@ -171,6 +182,7 @@ const lodges = [
   {
     id: 12,
     title: "Chundu Island",
+    slug: "chundu-island",
     price: "FROM US$650 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "29 Plantation Rooms",
@@ -185,6 +197,7 @@ const lodges = [
   {
     id: 13,
     title: "Matetsi River Lodge",
+    slug: "matetsi-river-lodge",
     price: "FROM US$1750 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "8 En-suite Tents",
@@ -199,6 +212,7 @@ const lodges = [
   {
     id: 14,
     title: "Victoria Falls Hotel",
+    slug: "victoria-falls-hotel",
     price: "FROM US$920 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "21 Garden Rooms",
@@ -213,6 +227,7 @@ const lodges = [
   {
     id: 15,
     title: "Batonka Guest Lodge",
+    slug: "batonka-guest-lodge",
     price: "FROM US$1100 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "12 Beach Villas",
@@ -228,6 +243,7 @@ const lodges = [
   {
     id: 16,
     title: "Wallow Lodge",
+    slug: "wallow-lodge",
     price: "FROM US$1100 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "12 Beach Villas",
@@ -242,6 +258,7 @@ const lodges = [
   {
     id: 17,
     title: "Lokuthula Lodges",
+    slug: "lokuthula-lodges",
     price: "FROM US$1100 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "12 Beach Villas",
@@ -258,6 +275,7 @@ const lodges = [
    {
     id: 18,
     title: "Rainbow Hotel",
+    slug: "rainbow-hotel",
     price: "FROM US$1100 PER PERSON PER NIGHT",
     location: "Victoria Falls",
     feature1: "12 Beach Villas",
@@ -272,6 +290,7 @@ const lodges = [
    {
     id: 19,
     title: "Fothergill Island",
+    slug: "fothergill-island",
     price: "FROM US$1100 PER PERSON PER NIGHT",
     location: "Kariba",
     feature1: "12 Beach Villas",
@@ -286,6 +305,7 @@ const lodges = [
    {
     id: 20,
     title: "Spurwing Island",
+    slug: "spurwing-island",
     price: "FROM US$1100 PER PERSON PER NIGHT",
     location: "Kariba",
     feature1: "12 Beach Villas",
@@ -300,6 +320,7 @@ const lodges = [
   {
     id: 21,
     title: "Bumi Hills Safari Lodge",
+    slug: "bumi-hills-safari-lodge",
     price: "FROM US$1100 PER PERSON PER NIGHT",
     location: "Kariba",
     feature1: "12 Beach Villas",
@@ -315,6 +336,7 @@ const lodges = [
    {
     id: 22,
     title: "Caribean Bay Hotel",
+    slug: "caribean-bay-hotel",
     price: "FROM US$1100 PER PERSON PER NIGHT",
     location: "Kariba",
     feature1: "12 Beach Villas",
@@ -329,6 +351,7 @@ const lodges = [
   {
     id: 23,
     title: "Hwange Safari Lodge",
+    slug: "hwange-safari-lodge",
     price: "FROM US$1100 PER PERSON PER NIGHT",
     location: "Hwange",
     feature1: "12 Beach Villas",
@@ -379,7 +402,7 @@ export default function SafariCards({ heading }: { heading?: string }) {
           {visibleLodges.map((lodge, index) => (
             <Link
               key={lodge.id}
-              href={`/places-to-stay/${lodge.id}`}
+              href={`/places-to-stay/${lodge.slug}`}
               className="group flex flex-col h-full bg-white overflow-hidden animate-fade-in-up"
               style={{
                 animationDelay: `${index * 200}ms`,

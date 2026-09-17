@@ -10,6 +10,7 @@ export default function Activities() {
   const activities = [
     {
       id: "01",
+      slug: "game-drive",
       name: "Game Drive",
       location: "Victoria Falls",
       image:
@@ -21,6 +22,7 @@ export default function Activities() {
     },
     {
       id: "02",
+      slug: "boat-cruise",
       name: "Boat Cruise",
       location: "Victoria Falls",
       image:
@@ -32,6 +34,7 @@ export default function Activities() {
     },
     {
       id: "03",
+      slug: "helicopter-flight",
       name: "Helicopter Flight",
       location: "Victoria Falls",
       image:
@@ -43,6 +46,7 @@ export default function Activities() {
     },
     {
       id: "04",
+      slug: "white-water-rafting",
       name: "White Water Rafting",
       location: "Victoria Falls",
       image:
@@ -103,10 +107,10 @@ export default function Activities() {
                       <h3 className="text-xl font-bold text-white">{activity.name}</h3>
                       <p className="text-sm text-gray-200">{activity.location}</p>
                       <p className="mt-2 text-sm text-gray-300">{activity.description}</p>
-                      <Link
-                        href={`/activities/${activity.id}`}
-                        className="mt-3 inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors"
-                      >
+                    <Link
+                      href={`/adventures/${activity.slug}`}
+                      className="mt-3 inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors"
+                    >
                         Discover →
                       </Link>
                     </div>

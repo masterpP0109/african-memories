@@ -1,6 +1,7 @@
 export interface AccommodationItem {
   id: number;
   title: string;
+  slug: string;
   location: string;
   price: string;
   type: string;
@@ -15,6 +16,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 1,
     title: 'Palm River Lodge',
+    slug: 'palm-river-lodge',
     location: 'Victoria Falls',
     price: 'From US$1,420 per person per night',
     type: 'Luxury',
@@ -29,6 +31,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 2,
     title: 'Victoria Falls Safari Lodge',
+    slug: 'victoria-falls-safari-lodge',
     location: 'Victoria Falls',
     price: 'From US$1,370 per person per night',
     type: 'Safari',
@@ -43,6 +46,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 3,
     title: 'Ilala Lodge Hotel',
+    slug: 'ilala-lodge-hotel',
     location: 'Victoria Falls',
     price: 'From US$9,870 per camp per night',
     type: 'Luxury',
@@ -57,6 +61,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 4,
     title: 'Pamusha Lodge',
+    slug: 'pamusha-lodge',
     location: 'Victoria Falls',
     price: 'From US$1,850 per person per night',
     type: 'Safari',
@@ -71,6 +76,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 5,
     title: 'Victoria Falls Pioneer Camp',
+    slug: 'victoria-falls-pioneer-camp',
     location: 'Victoria Falls',
     price: 'From US$2,100 per person per night',
     type: 'Luxury',
@@ -85,6 +91,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 6,
     title: 'Troutbeck Resort',
+    slug: 'troutbeck-resort',
     location: 'Nyanga',
     price: 'From US$950 per person per night',
     type: 'Mountain Escape',
@@ -99,6 +106,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 7,
     title: 'Elephant Hills Resort',
+    slug: 'elephant-hills-resort',
     location: 'Victoria Falls',
     price: 'From US$890 per person per night',
     type: 'Luxury',
@@ -113,6 +121,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 8,
     title: 'Mbano Manor Hotel',
+    slug: 'mbano-manor-hotel',
     location: 'Victoria Falls',
     price: 'From US$1,680 per person per night',
     type: 'Boutique',
@@ -127,6 +136,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 9,
     title: 'Explorers Village',
+    slug: 'explorers-village',
     location: 'Victoria Falls',
     price: 'From US$1,250 per person per night',
     type: 'Adventure',
@@ -141,6 +151,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 10,
     title: 'Katavi National Park Camp',
+    slug: 'katavi-national-park-camp',
     location: 'Katavi National Park',
     price: 'From US$2,400 per person per night',
     type: 'Remote Safari',
@@ -155,6 +166,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 11,
     title: 'Mikumi Safari Lodge',
+    slug: 'mikumi-safari-lodge',
     location: 'Mikumi National Park',
     price: 'From US$780 per person per night',
     type: 'Safari',
@@ -169,6 +181,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 12,
     title: 'Arusha Coffee Lodge',
+    slug: 'arusha-coffee-lodge',
     location: 'Arusha',
     price: 'From US$650 per person per night',
     type: 'Coffee Estate',
@@ -183,6 +196,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 13,
     title: 'Mara Grand Migration Camp',
+    slug: 'mara-grand-migration-camp',
     location: 'Serengeti Mara',
     price: 'From US$1,750 per person per night',
     type: 'Migration Camp',
@@ -197,6 +211,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 14,
     title: 'Kilimanjaro View Lodge',
+    slug: 'kilimanjaro-view-lodge',
     location: 'Moshi',
     price: 'From US$920 per person per night',
     type: 'Mountain Lodge',
@@ -211,6 +226,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 15,
     title: 'Zanzibar Beach Retreat',
+    slug: 'zanzibar-beach-retreat',
     location: 'Zanzibar Island',
     price: 'From US$1,100 per person per night',
     type: 'Beach Escape',
@@ -225,6 +241,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 16,
     title: 'Wallow Lodge',
+    slug: 'wallow-lodge',
     location: 'Victoria Falls',
     price: 'From US$1,100 per person per night',
     type: 'Safari',
@@ -239,6 +256,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 17,
     title: 'Lokuthula Lodges',
+    slug: 'lokuthula-lodges',
     location: 'Victoria Falls',
     price: 'From US$1,100 per person per night',
     type: 'Safari',
@@ -253,6 +271,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 18,
     title: 'Rainbow Hotel',
+    slug: 'rainbow-hotel',
     location: 'Victoria Falls',
     price: 'From US$1,100 per person per night',
     type: 'Luxury',
@@ -267,6 +286,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 19,
     title: 'Fothergill Island',
+    slug: 'fothergill-island',
     location: 'Kariba',
     price: 'From US$1,100 per person per night',
     type: 'Island Escape',
@@ -281,6 +301,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 20,
     title: 'Spurwing Island Lodge',
+    slug: 'spurwing-island-lodge',
     location: 'Kariba',
     price: 'From US$1,100 per person per night',
     type: 'Remote Safari',
@@ -295,6 +316,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 21,
     title: 'Bumi Hills Safari Lodge',
+    slug: 'bumi-hills-safari-lodge',
     location: 'Kariba',
     price: 'From US$1,100 per person per night',
     type: 'Safari',
@@ -309,6 +331,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 22,
     title: 'Caribean Bay Hotel',
+    slug: 'caribean-bay-hotel',
     location: 'Kariba',
     price: 'From US$1,100 per person per night',
     type: 'Family Resort',
@@ -323,6 +346,7 @@ export const accommodations: AccommodationItem[] = [
   {
     id: 23,
     title: 'Hwange Safari Lodge',
+    slug: 'hwange-safari-lodge',
     location: 'Hwange',
     price: 'From US$1,100 per person per night',
     type: 'Safari',
