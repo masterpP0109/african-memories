@@ -111,7 +111,7 @@ const AboutPage: React.FC = () => {
                     style={{ color: colors.body }}
                   >
                       At African Memories Safaris, every journey is designed to create
-              meaningful memories while showcasing Zimbabwe's remarkable
+              meaningful memories while showcasing Zimbabwe&apos;s remarkable
               landscapes, wildlife, and cultures. We believe travel should be
               authentic, responsible, and unforgettable
                   </p>
@@ -188,7 +188,7 @@ const AboutPage: React.FC = () => {
                       style={{ color: colors.body }}
                     >
                       At African Memories Safaris, we create immersive and sustainable
-              safari experiences that connect travelers with Zimbabwe's beauty
+              safari experiences that connect travelers with Zimbabwe&apos;s beauty
               while supporting conservation and empowering local communities.
                     </p>
                   </div>
@@ -203,7 +203,7 @@ const AboutPage: React.FC = () => {
                       className="text-base md:text-lg leading-[1.8em]"
                       style={{ color: colors.body }}
                     >
-                       To inspire unforgettable adventures that celebrate Africa's
+                       To inspire unforgettable adventures that celebrate Africa&apos;s
               wildlife, people, and landscapes while promoting responsible
               tourism for future generations.
                     </p>

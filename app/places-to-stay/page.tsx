@@ -60,7 +60,7 @@ export default function PlacesToStay() {
               Places to Stay
             </h1>
             <p className="mt-6 text-lg md:text-xl text-gray-100 max-w-2xl mx-auto">
-              Discover handpicked luxury lodges and retreats across Africa's most breathtaking destinations.
+              Discover handpicked luxury lodges and retreats across Africa&apos;s most breathtaking destinations.
             </p>
           </div>
         </div>

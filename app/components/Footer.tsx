@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaInstagram,
@@ -60,32 +61,33 @@ const Footer: React.FC = () => {
             </h3>
 
             <div className="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-x-20 text-lg">
-              <a href="#" className="hover:text-[#C7A27C] transition">
+              <Link href="/" className="hover:text-[#C7A27C] transition">
                 Home
-              </a>
+              </Link>
 
-              <a href="#" className="hover:text-[#C7A27C] transition">
+              <Link href="/adventures" className="hover:text-[#C7A27C] transition">
                 Things To Do
-              </a>
+              </Link>
 
-              <a href="/places-to-stay" className="hover:text-[#C7A27C] transition">
+              <Link href="/places-to-stay" className="hover:text-[#C7A27C] transition">
                 Places To Stay
-              </a>
-<a href="#" className="hover:text-[#C7A27C] transition">
+              </Link>
+
+              <a href="#gallery" className="hover:text-[#C7A27C] transition">
                 Gallery
               </a>
 
-              <a href="/blog" className="hover:text-[#C7A27C] transition">
+              <Link href="/blog" className="hover:text-[#C7A27C] transition">
                 Blog
-              </a>
+              </Link>
 
-              <a href="#" className="hover:text-[#C7A27C] transition">
+              <Link href="/about" className="hover:text-[#C7A27C] transition">
                 About
-              </a>
+              </Link>
 
-              <a href="#" className="hover:text-[#C7A27C] transition">
+              <Link href="/contact" className="hover:text-[#C7A27C] transition">
                 Contact
-              </a>
+              </Link>
 
              
             </div>

@@ -11,8 +11,6 @@ import { accommodations } from "../../data/accommodations";
 import { adventures } from "../../data/adventures";
 import AdventureCards from "../../components/AdventureCards";
 
-type PageProps = {};
-
 const destinations = [
   {
      slug: "victoria-falls",
@@ -157,7 +155,7 @@ const adventuresByDestination: Record<string, typeof adventures> = {
   ),
 };
 
-export default function DestinationPage({}: PageProps) {
+export default function DestinationPage() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const params = useParams();
   const slug = params.slug as string;

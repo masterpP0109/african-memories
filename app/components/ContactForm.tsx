@@ -205,7 +205,7 @@ export default function ContactPage() {
 
             {submitted && (
               <p className="text-sm font-medium" style={{ color: COLORS.accent }}>
-                Thanks! Your message has been sent — we'll be in touch soon.
+                Thanks! Your message has been sent — we&apos;ll be in touch soon.
               </p>
             )}
           </form>

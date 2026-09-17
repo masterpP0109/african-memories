@@ -1,0 +1,6 @@
+{
+  "name": "African Memories Safaris",
+  "description": "Discover unforgettable adventures, safari experiences, and luxury accommodations across Africa's untamed landscapes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -96,9 +96,9 @@ export default function Destinations() {
               nextEl: navigationNextRef.current,
             }}
             onInit={(swiper) => {
-              // @ts-ignore
+              // @ts-expect-error Swiper navigation params can be boolean
               swiper.params.navigation.prevEl = navigationPrevRef.current;
-              // @ts-ignore
+              // @ts-expect-error Swiper navigation params can be boolean
               swiper.params.navigation.nextEl = navigationNextRef.current;
               swiper.navigation.init();
               swiper.navigation.update();

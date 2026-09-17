@@ -155,7 +155,6 @@ const PopularHotelsAndLodges: React.FC = () => {
 
   const navigationPrevRef = React.useRef<HTMLButtonElement>(null);
   const navigationNextRef = React.useRef<HTMLButtonElement>(null);
-  const swiperRef = React.useRef<any>(null);
 
   return (
     <section className="bg-white py-16 w-full">
@@ -210,9 +209,9 @@ const PopularHotelsAndLodges: React.FC = () => {
               nextEl: navigationNextRef.current,
             }}
             onInit={(swiper) => {
-              // @ts-ignore
+              // @ts-expect-error Swiper navigation params can be boolean
               swiper.params.navigation.prevEl = navigationPrevRef.current;
-              // @ts-ignore
+              // @ts-expect-error Swiper navigation params can be boolean
               swiper.params.navigation.nextEl = navigationNextRef.current;
               swiper.navigation.init();
               swiper.navigation.update();
