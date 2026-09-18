@@ -1,8 +1,8 @@
-import { Controller, Get, Param, Post, Body } from '@nestjs/common';
-import { PricingService } from './pricing.service.js';
-import { CreatePriceDto } from './dto/create-price.dto.js';
+import { Controller, Get, Param, Post, Body } from "@nestjs/common";
+import { PricingService } from "./pricing.service.js";
+import { CreatePriceDto } from "./dto/create-price.dto.js";
 
-@Controller('pricing')
+@Controller("pricing")
 export class PricingController {
   constructor(private readonly pricingService: PricingService) {}
 
@@ -11,8 +11,8 @@ export class PricingController {
     return this.pricingService.create(dto);
   }
 
-  @Get('activity/:activityId')
-  findByActivity(@Param('activityId') activityId: string) {
+  @Get("activity/:activityId")
+  findByActivity(@Param("activityId") activityId: string) {
     return this.pricingService.findByActivityId(activityId);
   }
 }

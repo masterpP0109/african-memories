@@ -10,15 +10,15 @@ import {
   registerDecorator,
   ValidationArguments,
   ValidationOptions,
-} from 'class-validator';
+} from "class-validator";
 
 function IsAfterProperty(
   property: string,
   validationOptions?: ValidationOptions,
 ) {
-  return function (object: Object, propertyName: string) {
+  return function (object: object, propertyName: string) {
     registerDecorator({
-      name: 'isAfterProperty',
+      name: "isAfterProperty",
       target: object.constructor,
       propertyName: propertyName,
       constraints: [property],
@@ -46,15 +46,15 @@ export class CreatePriceDto {
   amount!: number;
 
   @IsString()
-  @Matches(/^[A-Z]{3}$/, { message: 'currency must be a 3-letter code' })
+  @Matches(/^[A-Z]{3}$/, { message: "currency must be a 3-letter code" })
   currency!: string;
 
   @IsDateString()
   validFrom!: string;
 
   @IsDateString()
-  @IsAfterProperty('validFrom', {
-    message: 'validTo must be after validFrom',
+  @IsAfterProperty("validFrom", {
+    message: "validTo must be after validFrom",
   })
   validTo!: string;
 

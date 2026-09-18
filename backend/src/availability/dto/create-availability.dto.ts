@@ -1,12 +1,21 @@
-import { IsDateString, IsInt, IsOptional, IsUUID, Min, Matches, MaxLength, registerDecorator, ValidationArguments, ValidationOptions } from 'class-validator';
+import {
+  IsDateString,
+  IsInt,
+  IsOptional,
+  IsUUID,
+  Min,
+  registerDecorator,
+  ValidationArguments,
+  ValidationOptions,
+} from "class-validator";
 
 function IsAfterProperty(
   property: string,
   validationOptions?: ValidationOptions,
 ) {
-  return function (object: Object, propertyName: string) {
+  return function (object: object, propertyName: string) {
     registerDecorator({
-      name: 'isAfterProperty',
+      name: "isAfterProperty",
       target: object.constructor,
       propertyName: propertyName,
       constraints: [property],
@@ -36,7 +45,7 @@ export class CreateAvailabilityDto {
   startsAt!: string;
 
   @IsDateString()
-  @IsAfterProperty('startsAt', { message: 'endsAt must be after startsAt' })
+  @IsAfterProperty("startsAt", { message: "endsAt must be after startsAt" })
   endsAt!: string;
 
   @IsInt()

@@ -1,6 +1,6 @@
-import { Module } from '@nestjs/common';
-import { AvailabilityService } from './availability.service.js';
-import { AvailabilityController } from './availability.controller.js';
+import { Module } from "@nestjs/common";
+import { AvailabilityService } from "./availability.service.js";
+import { AvailabilityController } from "./availability.controller.js";
 
 @Module({
   controllers: [AvailabilityController],

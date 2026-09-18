@@ -19,6 +19,8 @@ model Activity {
   availabilities Availability[]
   createdAt      DateTime         @default(now())
   updatedAt      DateTime         @updatedAt
+
+  @@index([status, category, name])
 }
 
 enum ActivityStatus {
@@ -36,6 +38,8 @@ model Price {
   activityId String?
   activity   Activity? @relation(fields: [activityId], references: [id])
   createdAt  DateTime  @default(now())
+
+  @@index([activityId, isActive, validFrom])
 }
 
 model Availability {
@@ -47,4 +51,6 @@ model Availability {
   activityId String?
   activity   Activity? @relation(fields: [activityId], references: [id])
   createdAt  DateTime  @default(now())
+
+  @@index([activityId, startsAt])
 }

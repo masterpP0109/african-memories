@@ -2,9 +2,9 @@ import {
   Injectable,
   BadRequestException,
   NotFoundException,
-} from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service.js';
-import { CreateAvailabilityDto } from './dto/create-availability.dto.js';
+} from "@nestjs/common";
+import { PrismaService } from "../prisma/prisma.service.js";
+import { CreateAvailabilityDto } from "./dto/create-availability.dto.js";
 
 @Injectable()
 export class AvailabilityService {
@@ -16,15 +16,15 @@ export class AvailabilityService {
     const startsAt = new Date(dto.startsAt);
     const endsAt = new Date(dto.endsAt);
     if (endsAt <= startsAt) {
-      errors.push('endsAt must be after startsAt');
+      errors.push("endsAt must be after startsAt");
     }
 
     if (dto.remaining > dto.capacity) {
-      errors.push('remaining cannot exceed capacity');
+      errors.push("remaining cannot exceed capacity");
     }
 
     if (!dto.activityId) {
-      errors.push('activityId is required');
+      errors.push("activityId is required");
     }
 
     if (errors.length > 0) {
@@ -48,12 +48,12 @@ export class AvailabilityService {
     });
 
     if (!activity) {
-      throw new NotFoundException('Activity not found');
+      throw new NotFoundException("Activity not found");
     }
 
     return this.prisma.availability.findMany({
       where: { activityId },
-      orderBy: { startsAt: 'asc' },
+      orderBy: { startsAt: "asc" },
     });
   }
 }
