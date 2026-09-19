@@ -1,3 +1,5 @@
+Start with [the project-specific database guide](DATABASE_GUIDE.md) for Docker, PostgreSQL, data entry, frontend verification, and the backend completion audit.
+
 This repository contains the African Memories Next.js frontend and NestJS/PostgreSQL backend.
 
 ## Backend local setup

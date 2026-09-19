@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import { useParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { accommodations } from "../../data/accommodations";
@@ -166,21 +166,7 @@ export default function DestinationPage({}: PageProps) {
   const galleryImages = galleryImagesByDestination[slug] || fallbackGalleryImages;
 
   if (!destination) {
-    return (
-      <main className="bg-[#f7ede0] min-h-screen">
-      <div className="fixed top-0 left-0 w-full z-50">
-        <Navbar />
-      </div>
-        <section className="py-20">
-          <div className="container mx-auto px-6 text-center">
-            <h1 className="text-4xl font-extrabold text-[#3b2b18]">Destination Not Found</h1>
-            <Link href="/" className="mt-6 inline-flex items-center gap-2 text-orange-600 hover:underline">
-              <ArrowLeft size={16} /> Back to Home
-            </Link>
-          </div>
-        </section>
-      </main>
-    );
+    notFound();
   }
 
   return (

@@ -24,9 +24,9 @@ function IsAfterProperty(
         async validate(value: any, args: ValidationArguments) {
           const [relatedPropertyName] = args.constraints;
           const relatedValue = (args.object as any)[relatedPropertyName];
-          return value instanceof Date && relatedValue instanceof Date
-            ? value > relatedValue
-            : false;
+          return typeof value === "string" && typeof relatedValue === "string"
+            && Number.isFinite(Date.parse(value)) && Number.isFinite(Date.parse(relatedValue))
+            && Date.parse(value) > Date.parse(relatedValue);
         },
         defaultMessage(args: ValidationArguments) {
           const [relatedPropertyName] = args.constraints;

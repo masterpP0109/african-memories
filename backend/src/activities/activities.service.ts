@@ -44,7 +44,7 @@ export class ActivitiesService {
       where: { slug },
       include: { prices: true, availabilities: true },
     });
-    if (!activity) throw new NotFoundException("Activity not found");
+    if (!activity || activity.status !== "PUBLISHED") throw new NotFoundException("Activity not found");
     return activity;
   }
 

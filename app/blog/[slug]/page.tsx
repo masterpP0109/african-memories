@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -148,32 +148,13 @@ export default function BlogPostPage() {
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
-    return (
-      <div className="min-h-screen bg-[#f7f4ee]">
-        <Navbar />
-        <main className="mx-auto w-full max-w-[600px] px-6 py-8 md:px-8">
-          <h1 className="font-serif text-[28px] text-[#263d55]">
-            Post Not Found
-          </h1>
-          <Link
-            href="/blog"
-            className="mt-4 inline-block text-[10px] text-[#c56a32] transition-colors hover:text-[#263d55]"
-          >
-            &larr; Back to Blog
-          </Link>
-        </main>
-        <Footer />
-      </div>
-    );
+    notFound();
   }
 
-  let similarPosts = blogPosts.filter(
-    (p) => p.category === post.category && p.slug !== post.slug
-  );
-  if (similarPosts.length < 3) {
-    const others = blogPosts.filter((p) => p.category !== post.category);
-    similarPosts = [...similarPosts, ...others].slice(0, 3);
-  }
+  const similarPosts = [
+    ...blogPosts.filter(p => p.category === post.category && p.slug !== post.slug),
+    ...blogPosts.filter(p => p.category !== post.category),
+  ].slice(0, 3);
 
   return (
     <div className="min-h-screen bg-[#f7f4ee]">
@@ -209,7 +190,7 @@ export default function BlogPostPage() {
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#f7f4ee] to-transparent" />
       </section>
 
-      <main className="mx-auto w-full max-w-[700px] px-6 py-8 md:px-8">
+      <main className="mx-auto w-full max-w-[800px] px-6 py-8 md:px-8">
         {/* Article header */}
         <motion.header
           initial={{ opacity: 0, y: 12 }}
@@ -217,7 +198,7 @@ export default function BlogPostPage() {
           transition={{ duration: 0.6 }}
         >
           {/* Meta */}
-          <div className="mb-3 flex items-center gap-1.5 text-[11px] md:text-[12px]">
+          <div className="mb-3 flex items-center gap-1.5 text-xs md:text-[12px]">
             <span className="text-[#6f6257]">
               {post.date}
             </span>
@@ -236,7 +217,7 @@ export default function BlogPostPage() {
           </div>
 
           {/* Title */}
-          <h1 className="max-w-[460px] font-serif text-[30px] font-normal leading-[1.08] tracking-[-0.02em] text-[#4B3621] md:text-[34px]">
+          <h1 className="font-serif text-[36px] font-normal leading-[1.08] tracking-[-0.02em] text-[#4B3621] md:text-[48px]">
             {post.title}
           </h1>
         </motion.header>
@@ -269,7 +250,7 @@ export default function BlogPostPage() {
               />
             </div>
 
-              <figcaption className="mt-1.5 text-center text-[11px] text-[#403d39]">
+              <figcaption className="mt-1.5 text-center text-xs text-[#403d39]">
               The longer you stay, the richer the experience
             </figcaption>
           </figure>
@@ -320,7 +301,7 @@ export default function BlogPostPage() {
                     <p className="text-[13px] font-medium text-[#4B3621] group-hover:text-[#c56a32]">
                       {sp.title}
                     </p>
-                    <p className="text-[10px] text-[#6f6257]">
+                    <p className="text-xs text-[#6f6257]">
                       {sp.date} &bull; {sp.category}
                     </p>
                   </div>

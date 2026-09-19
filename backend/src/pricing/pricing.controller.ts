@@ -1,4 +1,5 @@
-import { Controller, Get, Param, Post, Body } from "@nestjs/common";
+import { AdminApiKeyGuard } from "../auth/admin-api-key.guard.js";
+import { Controller, Get, Param, Post, Body, UseGuards } from "@nestjs/common";
 import { PricingService } from "./pricing.service.js";
 import { CreatePriceDto } from "./dto/create-price.dto.js";
 
@@ -7,6 +8,7 @@ export class PricingController {
   constructor(private readonly pricingService: PricingService) {}
 
   @Post()
+  @UseGuards(AdminApiKeyGuard)
   create(@Body() dto: CreatePriceDto) {
     return this.pricingService.create(dto);
   }

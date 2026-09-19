@@ -4,59 +4,12 @@ import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-export default function Activities() {
+interface HomeActivity { id: string; slug: string; name: string; location: string; image: string; alt: string; carImage: string; description: string; }
+
+export default function Activities({ activities = [] }: { activities?: HomeActivity[] }) {
   const [flippedId, setFlippedId] = useState<string | null>(null);
   
-  const activities = [
-    {
-      id: "01",
-      slug: "game-drive",
-      name: "Game Drive",
-      location: "Victoria Falls",
-      image:
-        "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?q=80&w=1600&auto=format&fit=crop",
-      alt: "Game drive safari vehicle",
-      carImage:
-        "https://ik.imagekit.io/c0x52ylk1/African%20Memories%20Resources/pexels-martine-mars-737731682-18501328.jpg?updatedAt=1779212962923",
-      description: "Experience thrilling wildlife encounters on guided safari drives.",
-    },
-    {
-      id: "02",
-      slug: "boat-cruise",
-      name: "Boat Cruise",
-      location: "Victoria Falls",
-      image:
-        "https://africaseden.travel/wp-content/uploads/2026/04/New-Zambezi-River-Cruise-Launches-in-Victoria-Falls-2.webp",
-      alt: "Guided walking safari",
-      carImage:
-        "https://ik.imagekit.io/c0x52ylk1/African%20Memories%20Resources/caption.jpg?updatedAt=1778971937767",
-      description: "Relaxing river cruise with stunning views of the falls.",
-    },
-    {
-      id: "03",
-      slug: "helicopter-flight",
-      name: "Helicopter Flight",
-      location: "Victoria Falls",
-      image:
-        "https://hideawaysafrica.com/wp-content/uploads/2026/05/Helicopter-Transfers-to-Bumbusi-Wilderness-Camp.webp",
-      alt: "Evening campfire under stars",
-      carImage:
-        "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-540x360/09/b3/09/a1.jpg",
-      description: "Aerial adventure with breathtaking aerial views of Victoria Falls.",
-    },
-    {
-      id: "04",
-      slug: "white-water-rafting",
-      name: "White Water Rafting",
-      location: "Victoria Falls",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCTv84Aweoc6ITAdCi38xfK4p-iD7HpcTRlVmzzhuGeA&s=10",
-      alt: "Walking safari guide tracking",
-      carImage:
-        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/1b/36/da/prepare-to-get-wet-while.jpg?w=300&h=300&s=1",
-      description: "Exciting rapids adventure through the Zambezi River.",
-    },
-  ];
+
 
   return (
     <section className="bg-white py-14 sm:py-20 text-[#3b2b18]">

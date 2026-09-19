@@ -1,4 +1,5 @@
-import { Controller, Get, Param, Post, Body } from "@nestjs/common";
+import { AdminApiKeyGuard } from "../auth/admin-api-key.guard.js";
+import { Controller, Get, Param, Post, Body, UseGuards } from "@nestjs/common";
 import { AvailabilityService } from "./availability.service.js";
 import { CreateAvailabilityDto } from "./dto/create-availability.dto.js";
 
@@ -7,6 +8,7 @@ export class AvailabilityController {
   constructor(private readonly availabilityService: AvailabilityService) {}
 
   @Post()
+  @UseGuards(AdminApiKeyGuard)
   create(@Body() dto: CreateAvailabilityDto) {
     return this.availabilityService.create(dto);
   }

@@ -1,3 +1,4 @@
+import { apiGet, Activity } from "../lib/api";
 import Navbar from './components/Navbar';
 import BannerCarousel from './components/BannerCarousel';
 import PopularActivities from './components/PopularActivities';
@@ -16,7 +17,11 @@ import Activities from './components/Activities';
 
 
 
-export default function Home() {
+export default async function Home() {
+  let activities: Activity[] = [];
+  let activitiesUnavailable = false;
+  try { activities = await apiGet<Activity[]>('/activities'); }
+  catch { activitiesUnavailable = true; }
   const bannerData = [
     {
       title: "Discover Victoria Falls",
@@ -49,7 +54,8 @@ export default function Home() {
       <BannerCarousel banners={bannerData} />
      <Destinations/>
      <Places/>
-     <Activities/>
+     <Activities activities={activities.slice(0, 4).map(a => ({ id: a.id, slug: a.slug, name: a.name, location: a.category, image: a.image || '', carImage: a.image || '', alt: a.name, description: a.description || '' }))}/>
+     {activitiesUnavailable && <p className="bg-[#f8efe6] p-6 text-center text-[#3b2b18]">Experiences are temporarily unavailable. Please try again shortly.</p>}
       <WhyChooseUs />
       <Testimonials />
       <Gallery />

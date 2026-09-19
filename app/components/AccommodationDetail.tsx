@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { accommodations as accommodationCatalog } from '../data/accommodations';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import AccommodationFacilitiesSection from './AccommodationFacilities';
 import AccommodationMainTitlesSection from './AccommodationMainTitles';
 
@@ -27,7 +28,7 @@ export default function AccommodationDetail({ slug }: { slug: string }) {
     <main className="min-h-screen bg-white text-stone-800">
       <Navbar />
 
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-[70svh] min-h-[420px] w-full overflow-hidden">
         <Image
           src={accommodation.image}
           alt={accommodation.title}
@@ -67,14 +68,14 @@ export default function AccommodationDetail({ slug }: { slug: string }) {
           </div>
         </div>
       </section>
-
+      <Footer />
     </main>
   );
 }
 
 function AccommodationDetailFeature({ accommodation }: { accommodation: (typeof accommodationCatalog)[0] }) {
   return (
-    <section className="bg-[#f8efe6] text-stone-800 py-[150px]">
+    <section className="bg-[#f8efe6] text-stone-800 py-16 md:py-24">
       <div className="container mx-auto px-6 py-0 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
           <div className="max-w-2xl">
@@ -93,10 +94,10 @@ function AccommodationDetailFeature({ accommodation }: { accommodation: (typeof 
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Link
-                href="/places-to-stay"
+                href="/contact"
                 className="inline-flex items-center justify-center border border-[#3b2b18] bg-[#3b2b18] px-8 py-4 text-sm font-semibold uppercase tracking-[0.25em] text-white transition hover:bg-[#2a1f15]"
               >
-                Book now
+                Plan your stay
               </Link>
               <Link
                 href="/contact"
@@ -132,12 +133,9 @@ function AccommodationImageCarousel({ accommodation }: { accommodation: (typeof 
   const [savedScrollLeft, setSavedScrollLeft] = useState(0);
   const [pointerId, setPointerId] = useState<number | null>(null);
 
-  const carouselImages = [
-    { src: accommodation.image, alt: `${accommodation.title} overview`, minWidth: 540 },
-    { src: accommodationCatalog.find((item) => item.id !== accommodation.id)?.image ?? accommodation.image, alt: 'Lounge view', minWidth: 420 },
-    { src: accommodationCatalog.find((item) => item.id !== accommodation.id && item.image !== accommodation.image)?.image ?? accommodation.image, alt: 'Pool scene', minWidth: 480 },
-    { src: accommodationCatalog.find((item) => item.id !== accommodation.id && item.image !== accommodation.image && item.id !== accommodation.id + 1)?.image ?? accommodation.image, alt: 'Dining view', minWidth: 520 },
-  ];
+  const carouselImages = [accommodation.image, accommodation.foodImage]
+    .filter((src, index, images): src is string => Boolean(src) && images.indexOf(src) === index)
+    .map((src, index) => ({ src, alt: `${accommodation.title} ${index === 0 ? 'overview' : 'dining'}`, minWidth: 420 }));
 
   const handlePointerEnter = () => {
     setIsHovering(true);
@@ -193,7 +191,7 @@ function AccommodationImageCarousel({ accommodation }: { accommodation: (typeof 
             <div
               key={index}
               className="snap-start flex-shrink-0 overflow-hidden bg-white shadow-2xl ring-1 ring-black/5"
-              style={{ minWidth: `${image.minWidth}px`, height: '470px' }}
+              style={{ width: 'min(85vw, 540px)', height: '400px' }}
             >
               <img
                 src={image.src}

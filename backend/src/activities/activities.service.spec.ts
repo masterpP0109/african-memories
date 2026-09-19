@@ -99,6 +99,10 @@ describe("ActivitiesService", () => {
   });
 
   describe("findBySlug", () => {
+    it("does not expose a draft through its public slug", async () => {
+      prisma.activity.findUnique.mockResolvedValue({ status: "DRAFT" });
+      await expect(service.findBySlug("draft")).rejects.toThrow(NotFoundException);
+    });
     it("should return the activity when slug exists", async () => {
       const mockActivity = {
         id: "1",
